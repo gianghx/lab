@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123456
+  jpa:
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          batch_size: 50
+          batch_versioned_data: true
+          time_zone: UTC
+    hibernate:
+      ddl-auto: update
+
+#  servlet:
+#    multipart:
+#      max-file-size: 10MB
+#springdoc:
+#  swagger-ui:
+#    defaultModelsExpandDepth: -1
+#server:
+#  forward-headers-strategy: framework
+
+#logging:
+#  level:
+#    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
