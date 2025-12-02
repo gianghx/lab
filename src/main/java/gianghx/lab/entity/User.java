@@ -2,6 +2,8 @@ package gianghx.lab.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
@@ -23,8 +25,12 @@ public class User {
     private String address;
     @Column(name = "information")
     private String info;
-    @Column(name = "created_date", insertable = false , updatable = false)
+    @CreationTimestamp   // ✅ Tự động set khi entity được persist lần đầu
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(updatable = false)
     private Date createdDate;
-    @Column(name = "updated_date", insertable = false)
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(updatable = false)
     private Date updatedDate;
 }

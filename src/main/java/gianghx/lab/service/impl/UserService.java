@@ -27,7 +27,7 @@ public class UserService implements IUserService {
                 .address(request.getAddress())
                 .info(request.getInfo())
                 .build();
-            userRepository.save(user);
+            userRepository.saveAndFlush(user);
             return ResponseEntity.ok(new UserResponseDto(user));
         } catch (Exception e) {
             log.error(e.getMessage());
