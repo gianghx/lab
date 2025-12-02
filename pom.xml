@@ -119,4 +119,30 @@
         </plugins>
     </build>
 
+    <profiles>
+        <!-- DEV -->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
+        </profile>
+
+        <!-- STAGING -->
+        <profile>
+            <id>stg</id>
+            <properties>
+                <spring.profiles.active>stg</spring.profiles.active>
+            </properties>
+        </profile>
+
+        <!-- PRODUCTION -->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
